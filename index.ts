@@ -1,4 +1,4 @@
-const cardsShop : Array<string> = [
+const cardsShop : string[] = [
     "Carson Sinclair: The Butler",
     "Bestow Resolve",
     "Field Agent",
@@ -39,13 +39,13 @@ const cardsShop : Array<string> = [
     ".32 Colt",
 ]
 //pick random card from the card shop
-function pickRandomCard(source: Array<String>) {
+function pickRandomCard(source: string[]) {
     let randomIndex : number = Math.floor(Math.random() * source.length)
     return source[randomIndex]
 }
 //making a deck of cards from the shop
-function makeDeck(size: number, source: Array<String>) {
-    let deck : Array<String> = [];
+function makeDeck(size: number, source: string[]) {
+    let deck : string[] = [];
     const maxDuplicates : number = 2; //TBD
     while (deck.length < size) {
         deck.push(pickRandomCard(source))
