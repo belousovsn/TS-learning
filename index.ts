@@ -40,6 +40,13 @@ const cardsShop : string[] = [
     "Wolf Mask: The Moon's Sire",
     ".32 Colt",
 ]
+
+type Deck = {
+    cards : string [];
+    size : number;
+    numberOfAllowedDuplicates : number;
+}
+
 //pick random card from the card shop
 function pickRandomCard(source: string[]) {
     let randomIndex : number = Math.floor(Math.random() * source.length)
@@ -52,13 +59,16 @@ function isWithinCountLimit (sourceArray: string [], value: string, limitCount: 
 }
 
 //making a deck of cards from the shop
-function makeDeck(size: number, source: string[]) {
-    let deck : string[] = [];
-    const maxDuplicates : number = 2;
-    while (deck.length < size) {
+function makeDeck(size: number, source: string[]): Deck {
+    let deck : Deck = {
+        cards: [], 
+        size: size,
+        numberOfAllowedDuplicates: 2
+    };
+    while (deck.cards.length < size) {
         let pickedCard : string = pickRandomCard(source)
-        if (isWithinCountLimit(deck, pickedCard, maxDuplicates)) {
-            deck.push(pickedCard)
+        if (isWithinCountLimit(deck.cards, pickedCard, deck.numberOfAllowedDuplicates)) {
+            deck.cards.push(pickedCard)
         }
     }
     return deck

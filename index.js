@@ -1,3 +1,4 @@
+//Having a list of cards available in cardsShop we create a deck with needed parameters
 var cardsShop = [
     "Carson Sinclair: The Butler",
     "Bestow Resolve",
@@ -50,12 +51,15 @@ function isWithinCountLimit(sourceArray, value, limitCount) {
 }
 //making a deck of cards from the shop
 function makeDeck(size, source) {
-    var deck = [];
-    var maxDuplicates = 2;
-    while (deck.length < size) {
+    var deck = {
+        cards: [],
+        size: size,
+        numberOfAllowedDuplicates: 2
+    };
+    while (deck.cards.length < size) {
         var pickedCard = pickRandomCard(source);
-        if (isWithinCountLimit(deck, pickedCard, maxDuplicates)) {
-            deck.push(pickedCard);
+        if (isWithinCountLimit(deck.cards, pickedCard, deck.numberOfAllowedDuplicates)) {
+            deck.cards.push(pickedCard);
         }
     }
     return deck;
