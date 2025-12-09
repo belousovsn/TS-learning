@@ -1,3 +1,5 @@
+//Having a list of cards available in cardsShop we create a deck with needed parameters
+
 const cardsShop : string[] = [
     "Carson Sinclair: The Butler",
     "Bestow Resolve",
@@ -43,12 +45,21 @@ function pickRandomCard(source: string[]) {
     let randomIndex : number = Math.floor(Math.random() * source.length)
     return source[randomIndex]
 }
+//validate no more than certain amount of same cards in the deck
+function isWithinCountLimit (sourceArray: string [], value: string, limitCount: number): boolean {
+    let matchesCount : number = sourceArray.reduce((acc: number, curr: string) => acc + (curr === value ? 1 : 0), 0)
+    return matchesCount >= limitCount ? false : true
+}
+
 //making a deck of cards from the shop
 function makeDeck(size: number, source: string[]) {
     let deck : string[] = [];
-    const maxDuplicates : number = 2; //TBD
+    const maxDuplicates : number = 2;
     while (deck.length < size) {
-        deck.push(pickRandomCard(source))
+        let pickedCard : string = pickRandomCard(source)
+        if (isWithinCountLimit(deck, pickedCard, maxDuplicates)) {
+            deck.push(pickedCard)
+        }
     }
     return deck
 }

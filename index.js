@@ -43,12 +43,20 @@ function pickRandomCard(source) {
     var randomIndex = Math.floor(Math.random() * source.length);
     return source[randomIndex];
 }
+//validate no more than certain amount of same cards in the deck
+function isWithinCountLimit(sourceArray, value, limitCount) {
+    var matchesCount = sourceArray.reduce(function (acc, curr) { return acc + (curr === value ? 1 : 0); }, 0);
+    return matchesCount >= limitCount ? false : true;
+}
 //making a deck of cards from the shop
 function makeDeck(size, source) {
     var deck = [];
-    var maxDuplicates = 2; //TBD
+    var maxDuplicates = 2;
     while (deck.length < size) {
-        deck.push(pickRandomCard(source));
+        var pickedCard = pickRandomCard(source);
+        if (isWithinCountLimit(deck, pickedCard, maxDuplicates)) {
+            deck.push(pickedCard);
+        }
     }
     return deck;
 }
