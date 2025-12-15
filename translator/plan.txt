@@ -1,0 +1,20 @@
+User:
+    - can register with google auth
+    - can login
+    - can logout
+User:
+    - types in a word in foreign language (Armenian)
+        > typing is done through pop-up keyboard with language symbols
+System: 
+    if the word exists in the dictionary:
+        # form with translation is displayed
+        # form with suggested pictures is displayed
+        # button "Save as a card" is displayed
+    otherwise:
+        # list of similar existing words is displayed
+        # words in the list are clickable
+        # if clicked, the word is put into main input and search is executed
+Authenticated User: 
+    - saves a card
+    - can see the list of saved cards
+    - can open each card

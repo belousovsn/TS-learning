@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="search-container">
+        <div class="search-box">
+            <input 
+                type="text" 
+                class="search-input" 
+                placeholder="Type in a new word"
+                id="searchInput"
+            >
+            <button class="search-button" id="searchBtn" type="button">Search</button>
+        </div>
+
+        <details class="keyboard-toggle">
+            <summary class="keyboard-summary" role="button" aria-controls="armenianKeyboard" aria-expanded="false">Show Armenian Keyboard</summary>
+
+            <div id="armenianKeyboard" class="keyboard">
+                <div class="keyboard-row">
+                    <button type="button" class="key">՛</button>
+                    <button type="button" class="key">ը</button>
+                    <button type="button" class="key">է</button>
+                    <button type="button" class="key">ք</button>
+                    <button type="button" class="key">ո</button>
+                    <button type="button" class="key">ե</button>
+                    <button type="button" class="key">ռ</button>
+                    <button type="button" class="key">տ</button>
+                    <button type="button" class="key">ը</button>
+                    <button type="button" class="key">ւ</button>
+                </div>
+                <div class="keyboard-row">
+                    <button type="button" class="key">ա</button>
+                    <button type="button" class="key">ս</button>
+                    <button type="button" class="key">դ</button>
+                    <button type="button" class="key">ֆ</button>
+                    <button type="button" class="key">գ</button>
+                    <button type="button" class="key">հ</button>
+                    <button type="button" class="key">յ</button>
+                    <button type="button" class="key">կ</button>
+                    <button type="button" class="key">լ</button>
+                </div>
+                <div class="keyboard-row">
+                    <button type="button" class="key">զ</button>
+                    <button type="button" class="key">ղ</button>
+                    <button type="button" class="key">ց</button>
+                    <button type="button" class="key">վ</button>
+                    <button type="button" class="key">բ</button>
+                    <button type="button" class="key">ն</button>
+                    <button type="button" class="key">մ</button>
+                </div>
+                <div class="keyboard-row">
+                    <button type="button" class="key">շ</button>
+                    <button type="button" class="key">չ</button>
+                    <button type="button" class="key">պ</button>
+                    <button type="button" class="key">ջ</button>
+                    <button type="button" class="key">ռ</button>
+                    <button type="button" class="key">ս</button>
+                    <button type="button" class="key">թ</button>
+                </div>
+                <div class="keyboard-row">
+                    <button type="button" class="key wide">սփեյս</button>
+                </div>
+            </div>
+        </details>
+    </div>
+    
+    <div class="content-sections">
+        <div class="panel suggestions-panel">
+            <div class="panel-header">Similar Words</div>
+            <div class="panel-body">
+                <ul class="chips" aria-label="Similar words suggestions">
+                    <li class="chip">մատիտ</li>
+                    <li class="chip">գիրք</li>
+                    <li class="chip">դաս</li>
+                    <li class="chip">սիրել</li>
+                    <li class="chip">սովորել</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel translation-panel">
+            <div class="panel-header">Translation Result</div>
+            <div class="panel-body">
+                <div class="translation-block">
+                    <div class="translation-row"><span class="label">սկզբնական:</span> <span class="value">սիրել</span></div>
+                    <div class="translation-row"><span class="label">թարգմանություն:</span> <span class="value">to love</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel images-panel">
+            <div class="panel-header">Images</div>
+            <div class="panel-body">
+                <ul class="image-list" aria-label="Related images">
+                    <li class="image-item" aria-label="Mock image 1"></li>
+                    <li class="image-item" aria-label="Mock image 2"></li>
+                    <li class="image-item" aria-label="Mock image 3"></li>
+                    <li class="image-item" aria-label="Mock image 4"></li>
+                    <li class="image-item" aria-label="Mock image 5"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel action-panel">
+            <div class="panel-header">Actions</div>
+            <div class="panel-body">
+                <button type="button" class="primary-button">Make a card</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
